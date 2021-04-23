@@ -45,12 +45,116 @@ body {
     background: #EDEDED;
 }
 
+/* LEFT SIDE CONTENT */
+/* nav header */
+.nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background: #EDEDED;
+}
+
+.nav-header .profile {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.nav-header .profile img {
+    height: 37px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.nav-header .profile span {
+    font-size: 14px;
+}
+
+.nav .icons-nav a {
+    text-decoration: none;
+    color: #BABABA;
+    margin-right: 15px;
+}
+
+.nav .notifiche {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    height: 65px;
+    background: #A2DFFE;
+}
+
+.notifiche .notifiche-icon {
+    width: 37px;
+    height: 37px;
+    margin-right: 10px;
+    text-align: center;
+    background: #F5FCFF;
+    border-radius: 50%;
+}
+
+.notifiche .notifiche-icon i {
+    color: #A2DFFE;
+    line-height: 2.2;
+}
+
+.notifiche .notifiche-icon-text p {
+    font-size: 14px;
+}
+
+.notifiche .notifiche-icon-text a {
+    font-size: 12px;
+    color:#719AB0;
+}
+
+/* search */
+.friends-nav .search {
+    display: flex;
+    align-items: center;
+    background: #FBFBFB;
+    padding: 5px;
+}
+
+.friends-nav .search .search-btn {
+    height: 32px;
+    padding: 0 30px;
+    background: #FFFFFF;
+    border: none;
+    border-right: 1px solid #DEDFDE;
+    outline: none;
+    cursor: pointer;
+}
+
+.friends-nav .search .search-btn i {
+    color: #BFC1C3;
+}
+
+.friends-nav .search input {
+    flex-grow: 1;
+    height: 32px;
+    padding: 10px;
+    color: #A5A5A5;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+}
+
+
+
+/* RIGHT SIDE CONTENT */
 /* content header */
 .content .content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    border-left: 1px solid #DEDFDE;
 }
 
 .left-header {
@@ -62,7 +166,6 @@ body {
     height: 37px;
     margin-right: 10px;
     border-radius: 50%;
-    background: #F4F4F4;
 }
 
 .left-header p:first-child {
@@ -71,6 +174,7 @@ body {
 
 .left-header p:last-child {
     font-size: 12px;
+    font-weight: 700;
     color: #8D9295;
 }
 
@@ -108,12 +212,13 @@ body {
     transition: box-shadow .1s; 
 }
 
-.content-footer .footer-message:focus,
-.content-footer .footer-message:hover {
+.content-footer .footer-message:focus
+/* .content-footer .footer-message:hover */{
     box-shadow: 0px 0px 5px 2px #34B7F1;
 }
 
 .content-footer i {
+    font-size: 18px;
     padding: 0 25px;
     color:#777E81;
 }

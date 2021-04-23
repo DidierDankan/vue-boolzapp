@@ -9,16 +9,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="./CSS/main.css">
 </head>
 <body>
     
     <div id="app" class="container">
+        <!-- left side nav -->
         <aside class="nav">
+            <header class="nav-header">
+                <div class="profile">
+                    <img src="./img/avatar_io.jpg" alt="user photo">
+                    <span> Nome utente</span>
+                </div>
+                <div class="icons-nav">
+                    <a href="#">
+                        <i class="fas fa-circle-notch"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-comment-alt"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                </div>
 
+            </header>
+            <!-- Notifiche -->
+            <div class="notifiche">
+                <div class="notifiche-icon">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="notifiche-icon-text">
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <a href="#">
+                        Attiva notifiche desktop
+                    </a>
+                </div>
+            </div>
+            <nav class="friends-nav">
+                <div class="search">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="search" placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </nav>
         </aside>
+        <!-- right side content -->
         <main class="content">
             <header class="content-header">
 
@@ -51,7 +90,7 @@
                     <i class="far fa-laugh-squint"></i>
                 </a> 
 
-                <input class="footer-message" type="text" placeholder="write a message">
+                <input class="footer-message" type="text" placeholder="Write a message">
 
                 <a href="#">
                     <i class="fas fa-microphone-alt"></i>
