@@ -226,11 +226,11 @@ body {
 
 /* content main */
 .content .content-main {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items:baseline;
     align-content:flex-end;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; */
     flex-grow: 1;
     padding: 40px 55px;
     background-image: url(../img/mine.jpg);
@@ -238,9 +238,15 @@ body {
     overflow-y: auto;
 }
 
+.content .content-main .msg-right {
+    display: flex;
+    justify-content: right;
+}
+
 .msg-send {
     background: #DDFABF;
     max-width: 270px;
+    flex: 0 0 100%;
 }
 
 .msg-send,
