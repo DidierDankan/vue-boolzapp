@@ -123,7 +123,7 @@ body {
 
 .friends-nav .search .search-btn {
     height: 32px;
-    padding: 0 30px;
+    padding: 0 23px;
     background: #FFFFFF;
     border: 1px solid #F7F7F7;
     outline: none;
@@ -163,7 +163,7 @@ body {
 .contacts-list .contact {
     display: flex;
     align-items: center;
-    padding: 5px 15px;
+    padding: 7px 15px;
     border-bottom: 1px solid #F8F8F8;
     cursor: pointer;
     transition: background .1s;
@@ -218,7 +218,6 @@ body {
     color: #8D9295;
 }
 
-
 .content-header .right-header a {
     text-decoration: none;
     color: #BABABA;
@@ -227,11 +226,41 @@ body {
 
 /* content main */
 .content .content-main {
+    display: flex;
+    justify-content: space-between;
+    align-items:baseline;
+    align-content:flex-end;
+    flex-direction: row-reverse;
     flex-grow: 1;
+    padding: 40px 55px;
     background-image: url(../img/mine.jpg);
     background-size: 400px 200px;
     overflow-y: auto;
 }
+
+.msg-send {
+    background: #DDFABF;
+    max-width: 270px;
+}
+
+.msg-send,
+.msg-received {
+    padding: 10px 5px 0px 10px;
+    border-radius: 10px;
+}
+
+.msg-send .time-msg,
+.msg-received .time-msg{
+    text-align: right;
+    font-size: 8px;
+    padding-bottom: 5px;
+    color: #CDCFD1;
+}
+
+.msg-received {
+    background: #FFF;
+    max-width: 270px;
+} 
 
 /* content footer */
 .content-footer {
