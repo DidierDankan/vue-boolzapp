@@ -237,16 +237,15 @@ body {
     background-size: 400px 200px;
     overflow-y: auto;
 }
-
+/* per il messaggio inviato andare a destra, ho creato un contenitore solo per lui e dado display flex */
 .content .content-main .msg-right {
     display: flex;
     justify-content: right;
 }
 
 .msg-send {
-    background: #DDFABF;
-    max-width: 270px;
-    flex: 0 0 100%;
+    width: 45%;
+    background: #DDFABF;   
 }
 
 .msg-send,
@@ -264,8 +263,8 @@ body {
 }
 
 .msg-received {
+    width: 45%;
     background: #FFF;
-    max-width: 270px;
 } 
 
 /* content footer */
