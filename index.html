@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's up</title>
+    <!-- Vue js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Fonts -->
@@ -48,12 +50,23 @@
                     </a>
                 </div>
             </div>
+            <!-- search bar and friends -->
             <nav class="friends-nav">
+                <!-- search -->
                 <div class="search">
                     <button class="search-btn">
                         <i class="fas fa-search"></i>
                     </button>
                     <input type="search" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <!-- Contacts-->
+                <div class="contacts-list">
+                    <ul>
+                        <li class ="contact" v-for="friend in friends">
+                            <img :src="`./img/avatar${friend.avatar}.jpg`" alt="">
+                            <span>{{friend.name}}</span>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </aside>
