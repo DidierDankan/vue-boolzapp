@@ -105,19 +105,19 @@
 
             </header>
             <main class="content-main">
-                <div v-for="(friend,index) in friends" class="convo">
+                <div class="convo">
                     <div class="msg-right">
                         <div class="msg-send">
-                            <p>{{friends[index].messages}}</p>
+                            <p>{{friends[indexOfmessage].messages[0].message}}</p>
                             <div class="time-msg">
-                                <span>{{}}</span>
+                                <span>{{friends[indexOfmessage].messages[0].date}}</span>
                             </div>
                         </div>
                     </div>
                     <div  class="msg-received">
-                        <p>{{friend.messages.message}}</p>
+                        <p>{{friends[indexOfmessage].messages[2].message}}</p>
                         <div class="time-msg">
-                            <span>10/01/2021 15:50:00</span>
+                            <span>{{friends[indexOfmessage].messages[2].date}}</span>
                         </div>
                     </div>
                 </div>
