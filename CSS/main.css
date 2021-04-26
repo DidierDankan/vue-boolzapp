@@ -170,7 +170,7 @@ body {
 }
 
 .contacts-list .contact:hover,
-.contacts-list .contact.focus {
+.contacts-list .contact.active {
     background: #F7F7F7;
 }
 
@@ -234,7 +234,7 @@ body {
     overflow-y: auto;
 }
 /* per il messaggio inviato andare a destra, ho creato un contenitore solo per lui e dado display flex */
-.content .content-main .msg-right {
+.content .content-main .msg-right.send {
     display: flex;
     justify-content: right;
 }
@@ -247,6 +247,7 @@ body {
 .msg-send,
 .msg-received {
     padding: 10px 5px 0px 10px;
+    margin-bottom: 5px;
     border-radius: 10px;
 }
 

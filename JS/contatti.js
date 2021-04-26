@@ -87,10 +87,12 @@ const app = new Vue( {
                 ],
             },
         ],
-        indexOfmessage: 0,
+        indexOfConvo: 0,
+        indexOfMessage:0,
+        indexOfFriend:0,
     },
     mounted() {
-       
+        
     },
     methods:{
         contactShow(index) {
@@ -98,31 +100,18 @@ const app = new Vue( {
             console.log(friend)
 
             friend.visible = ! friend.visible;
+
+            
             
         },
 
-        nextConvo(index) {
-            // const friend = this.friends[index];
-            // console.log(friend.messages[this.indexOfConvo].message)
-            this.indexOfConvo ++;
-            console.log(this.friends[index].messages[this.indexOfConvo].message);
-            this.indexOfConvo ++;
-            // console.log(friend)
-            console.log(this.friends[index].messages[this.indexOfConvo].message)
+        onSelectConversation(index) {
+            this.indexOfFriend = index
 
             
-
-            // friend.messages[this.indexOfConvo].message = index
-            // console.log(friend.messages[index].message)
-
-            friend.messages[index].message ;
         },
-        nextContact(index) {
 
-
-            console.log(this.friends[index])
-            console.log(this.friends[index].messages[this.indexOfmessage]);
-        }
+    
         
 
     },

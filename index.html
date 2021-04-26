@@ -63,9 +63,9 @@
                 <div class="contacts-list">
                     <ul>
                         <li 
-                        @click="contactShow(index)"
+                        @click="onSelectConversation(index)"
                         class ="contact"
-                        :class="{focus: friend.visible}"
+                        :class="{active: friend.visible}"
                         v-for="(friend,index) in friends" 
                         :key="index + '-' + friend.name">
 
@@ -105,22 +105,23 @@
 
             </header>
             <main class="content-main">
-                <div class="convo">
-                    <div class="msg-right">
-                        <div class="msg-send">
-                            <p>{{friends[indexOfmessage].messages[0].message}}</p>
+                    <div v-for="(item,index) in friends[indexOfFriend].messages" class="msg">
+                        <div class="msg-right"
+                             :class="{send: item.status}">
+                            <div class="msg-send">
+                                <p>{{item.message}}</p>
+                                <div class="time-msg">
+                                    <span>{{item.date}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msg-received">
+                            <p>{{item.message}}</p>
                             <div class="time-msg">
-                                <span>{{friends[indexOfmessage].messages[0].date}}</span>
+                                <span>{{item.date}}</span>
                             </div>
                         </div>
                     </div>
-                    <div  class="msg-received">
-                        <p>{{friends[indexOfmessage].messages[2].message}}</p>
-                        <div class="time-msg">
-                            <span>{{friends[indexOfmessage].messages[2].date}}</span>
-                        </div>
-                    </div>
-                </div>
             </main>
             <footer class="content-footer">
                 <a href="#">
