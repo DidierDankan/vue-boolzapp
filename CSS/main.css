@@ -169,7 +169,8 @@ body {
     transition: background .1s;
 }
 
-.contacts-list .contact:hover {
+.contacts-list .contact:hover,
+.contacts-list .contact.focus {
     background: #F7F7F7;
 }
 
@@ -226,11 +227,6 @@ body {
 
 /* content main */
 .content .content-main {
-    /* display: flex;
-    justify-content: space-between;
-    align-items:baseline;
-    align-content:flex-end;
-    flex-direction: row-reverse; */
     flex-grow: 1;
     padding: 40px 55px;
     background-image: url(../img/mine.jpg);

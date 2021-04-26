@@ -6,7 +6,7 @@ const app = new Vue( {
             {
                 name: 'Michele',
                 avatar: '_1',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -28,7 +28,7 @@ const app = new Vue( {
             {
                 name: 'Fabio',
                 avatar: '_2',
-                visible: true,
+                visible: false,// di default era true
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -50,7 +50,7 @@ const app = new Vue( {
             {
                 name: 'Samuele',
                 avatar: '_3',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -72,7 +72,7 @@ const app = new Vue( {
             {
                 name: 'Luisa',
                 avatar: '_4',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -87,6 +87,43 @@ const app = new Vue( {
                 ],
             },
         ],
+        indexOfmessage: 0,
     },
-    
+    mounted() {
+       
+    },
+    methods:{
+        contactShow(index) {
+            const friend = this.friends[index];
+            console.log(friend)
+
+            friend.visible = ! friend.visible;
+            
+        },
+
+        nextConvo(index) {
+            // const friend = this.friends[index];
+            // console.log(friend.messages[this.indexOfConvo].message)
+            this.indexOfConvo ++;
+            console.log(this.friends[index].messages[this.indexOfConvo].message);
+            this.indexOfConvo ++;
+            // console.log(friend)
+            console.log(this.friends[index].messages[this.indexOfConvo].message)
+
+            
+
+            // friend.messages[this.indexOfConvo].message = index
+            // console.log(friend.messages[index].message)
+
+            friend.messages[index].message ;
+        },
+        nextContact(index) {
+
+
+            console.log(this.friends[index])
+            console.log(this.friends[index].messages[this.indexOfmessage]);
+        }
+        
+
+    },
 });
