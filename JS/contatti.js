@@ -87,32 +87,19 @@ const app = new Vue( {
                 ],
             },
         ],
-        indexOfConvo: 0,
-        indexOfMessage:0,
         indexOfFriend:0,
     },
     mounted() {
         
     },
     methods:{
-        contactShow(index) {
-            const friend = this.friends[index];
-            console.log(friend)
-
-            friend.visible = ! friend.visible;
-
-            
-            
-        },
 
         onSelectConversation(index) {
-            this.indexOfFriend = index
-
+            this.indexOfFriend = index;
+            
             
         },
 
-    
-        
 
     },
 });

@@ -234,36 +234,35 @@ body {
     overflow-y: auto;
 }
 /* per il messaggio inviato andare a destra, ho creato un contenitore solo per lui e dado display flex */
-.content .content-main .msg-right.send {
+.content .content-main .msg-right{
     display: flex;
     justify-content: right;
 }
 
-.msg-send {
+.send {
     width: 45%;
-    background: #DDFABF;   
-}
-
-.msg-send,
-.msg-received {
     padding: 10px 5px 0px 10px;
     margin-bottom: 5px;
+    font-size: 14px;
+    background: #DDFABF;  
     border-radius: 10px;
 }
 
-.msg-send .time-msg,
-.msg-received .time-msg{
+.received {
+    width: 45%;
+    padding: 10px 5px 0px 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    background: #FFF;
+    border-radius: 10px;
+} 
+
+.time-msg{
     text-align: right;
     font-size: 8px;
     padding-bottom: 5px;
     color: #CDCFD1;
 }
-
-.msg-received {
-    width: 45%;
-    background: #FFF;
-} 
-
 /* content footer */
 .content-footer {
     display: flex;

@@ -65,7 +65,7 @@
                         <li 
                         @click="onSelectConversation(index)"
                         class ="contact"
-                        :class="{active: friend.visible}"
+                        :class="{active: index == indexOfFriend}"
                         v-for="(friend,index) in friends" 
                         :key="index + '-' + friend.name">
 
@@ -104,43 +104,38 @@
                 </div>
 
             </header>
-            <main class="content-main">
-                    <div v-for="(item,index) in friends[indexOfFriend].messages" class="msg">
-                        <div class="msg-right"
-                             :class="{send: item.status}">
-                            <div class="msg-send">
-                                <p>{{item.message}}</p>
-                                <div class="time-msg">
-                                    <span>{{item.date}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="msg-received">
-                            <p>{{item.message}}</p>
-                            <div class="time-msg">
-                                <span>{{item.date}}</span>
-                            </div>
+            <main class="content-main">                
+
+                <div v-for="(item,index) in friends[indexOfFriend].messages" class="msg"
+                :class="{'msg-right': item.status === 'sent'}">
+        
+                    <div :class="[{'received': item.status === 'received'}, 'send' ]">
+                        <p>{{item.message}}</p>
+                        <div class="time-msg">
+                            <span>{{item.date}}</span>
                         </div>
                     </div>
-            </main>
+                </div>                          
+            </main>           
             <footer class="content-footer">
                 <a href="#">
                     <i class="far fa-laugh-squint"></i>
                 </a> 
-
+    
                 <input class="footer-message" type="text" placeholder="Write a message">
-
+    
                 <a href="#">
                     <i class="fas fa-microphone-alt"></i>
                 </a> 
                 
-
+    
             </footer>
         </main>
 
     </div>
 
-
+    <!-- class="msg-send" -->
+    <!-- class="msg-right" -->
 <!--:class="{visible: index == indexOfConvo}" --> 
 
 
