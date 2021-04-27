@@ -114,6 +114,10 @@ body {
 }
 
 /* search */
+.friends-nav {
+    overflow-y: auto;
+}
+
 .friends-nav .search {
     display: flex;
     align-items: center;

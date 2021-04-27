@@ -61,7 +61,7 @@
                 </div>
                 <!-- Contacts-->
                 <div class="contacts-list">
-                    <ul>
+                    <ul class="">
                         <li 
                         @click="onSelectConversation(index)"
                         class ="contact"
@@ -81,12 +81,12 @@
         <main class="content">
             <header class="content-header">
 
-                <div class="left-header">
-                    <div class="friend-photo">
-                        <img  src="./img/avatar_1.jpg" alt="user-friend">
+                <div class="left-header" >
+                    <div class="friend-photo" >
+                        <img  :src="`./img/avatar${friends[indexOfFriend].avatar}.jpg`" alt="user-friend">
                     </div>
                     <div class="friend-photo-def">
-                        <p>Michele</p>
+                        <p>{{friends[indexOfFriend].name}}</p>
                         <p>Ultimo accesso oggi alle 10:35</p>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                     <i class="far fa-laugh-squint"></i>
                 </a> 
     
-                <input class="footer-message" type="text" placeholder="Write a message">
+                <input class="footer-message" type="text" placeholder="Write a message" v-model="newText" @keyup.enter ="newMessage" ref="newText">
     
                 <a href="#">
                     <i class="fas fa-microphone-alt"></i>
@@ -134,13 +134,9 @@
 
     </div>
 
-    <!-- class="msg-send" -->
-    <!-- class="msg-right" -->
-<!--:class="{visible: index == indexOfConvo}" --> 
-
-
-
     <!-- JS -->
+    <!-- day js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
     <script src="./JS/contatti.js"></script>
 </body>
 </html>
