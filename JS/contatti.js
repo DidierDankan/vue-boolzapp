@@ -133,8 +133,8 @@ const app = new Vue( {
         onNewSearch() {
             //for each per looparci su ogni elemento(tutti datti di un elemento di friends)
             this.friends.forEach((element)=>{
-                // qui se il element.name include il resultato di quello che ho scrito all'input allora la visibilita adventa true solo per quello elemento trovato
-                if(element.name.includes(this.newSearch)){
+                // qui se il element.name include il resultato di quello che ho scrito all'input allora la visibilita adventa true solo per quello elemento trovato, rendendo tutte due to lowercase(element.name e input.value) quando scrive nello input pure se è lowercase trova quelle che è uppercase nel markup
+                if(element.name.toLowerCase().includes(this.newSearch.toLowerCase())){
                     element.visible = true;
                 } else {
                     //pure si sono tutti true como default, se non li trova, gli cambia per false
@@ -143,15 +143,17 @@ const app = new Vue( {
             });
             
         },
-        //     toTitleCase () {
-        //         this.newSearch = this.newSearch.toLowerCase().split(' ');
-        //         for (let i = 0; i < this.newSearch.length; i++) {
-        //             this.newSearch[i] = this.newSearch[i].charAt(0).toUpperCase() + this.newSearch[i].slice(1);
-        //         }
-        //         return this.newSearch.join(' ');
-        //     },
-        
 
+        //questa è una function che transforma a prima lettera in uppercase
+            //  toTitleCase () {
+            //      this.newSearch = this.newSearch.toLowerCase().split (' ');
+            //      for (let i = 0; i < this.newSearch.length; i++) {
+            //          this.newSearch[i] = this.newSearch[i].charAt(0).toUpperCase() + this.newSearch[i].slice(1);
+            //     }
+            //      return this.newSearch.join(' ');
+            //  },
+        
+        // questo è un filter di vue che non ho capito bene
         // },
         // filters: {
         //     capitalize: function (newSearch) {
