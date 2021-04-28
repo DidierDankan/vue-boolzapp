@@ -87,40 +87,78 @@ const app = new Vue( {
                 ],
             },
         ],
+        //index reactivo(di ogni elemento(all'interno del oggetto)) per trovare e navigare da per tutto
         indexOfFriend:0,
+        //variabile per i input della chat
         newText: '',
+        //variabile per i input di riscerca
+        newSearch:'',
     },
     
     methods:{
-
+        //seleziona la chat presenti
         onSelectConversation(index) {
             this.indexOfFriend = index;
-            
-            
+           
         },
-
+        //send message to chat presenti
         newMessage() {
+
+            const activeContact = this.friends[this.indexOfFriend].messages;
+
+            //user message sent
             if(this.newText !== '') {
-                this.friends[this.indexOfFriend].messages.push({
+                activeContact.push({
                     date:dayjs().format('DD/MM/YYYY hh:mm:ss'),
-                    message:this.newText.trim(),
-                    status:'sent'
+                    message:this.newText,
+                    status:'sent',
                 })
 
+                //clean input
                 this.newText = '';
 
+                //automatic response
                 setTimeout(() =>{
                     if(this.newText == ''){
-                        this.friends[this.indexOfFriend].messages.push({
+                        activeContact.push({
                             date:dayjs().format('DD/MM/YYYY hh:mm:ss'),
                             message:'Ok',
-                            status:'received'
+                            status:'received',
                         });
                     }
                 },1500)
             }
-        }
+        },
+        //qui per filtragio del search
+        onNewSearch() {
+            //for each per looparci su ogni elemento(tutti datti di un elemento di friends)
+            this.friends.forEach((element)=>{
+                // qui se il element.name include il resultato di quello che ho scrito all'input allora la visibilita adventa true solo per quello elemento trovato
+                if(element.name.includes(this.newSearch)){
+                    element.visible = true;
+                } else {
+                    //pure si sono tutti true como default, se non li trova, gli cambia per false
+                    element.visible = false;
+                }
+            });
+            
+        },
+        //     toTitleCase () {
+        //         this.newSearch = this.newSearch.toLowerCase().split(' ');
+        //         for (let i = 0; i < this.newSearch.length; i++) {
+        //             this.newSearch[i] = this.newSearch[i].charAt(0).toUpperCase() + this.newSearch[i].slice(1);
+        //         }
+        //         return this.newSearch.join(' ');
+        //     },
+        
 
-
-    },
+        // },
+        // filters: {
+        //     capitalize: function (newSearch) {
+        //         if (!newSearch) return ''
+        //         newSearch = newSearch.toString()
+        //         return newSearch.charAt(0).toUpperCase() + newSearch.slice(1)
+        //     }
+     },
+    
 });
